@@ -1,0 +1,18 @@
+# torch is the CPU build (2.14.1+cpu). Install: pip install torch --index-url https://download.pytorch.org/whl/cpu
+numpy==2.4.6
+pillow==13.0.0
+scikit-learn==1.9.1
+torch==2.14.1
+# backend
+SQLAlchemy==2.0.55
+# api
+# pinned to 0.141.1: fastapi 0.142+ requires opentelemetry-api
+fastapi==0.141.1
+uvicorn==0.54.0
+httpx2==2.13.1       # for starlette TestClient (avoids the httpx warning)
+pydantic==2.14.1
+PyJWT==2.15.1
+# frontend
+streamlit==1.66.1
+# test
+pytest==9.1.1

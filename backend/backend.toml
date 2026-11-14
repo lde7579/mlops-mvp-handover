@@ -1,0 +1,16 @@
+# 백엔드 설정. 비밀키는 여기에 없다 (환경 변수 MLOPS_SECRET_KEY 또는 data/secret.key, backend/README.md 참고).
+db_path = "data/mlops.db"   # 프로젝트 루트 기준 상대경로 (data/ 는 git·조원 압축에서 제외)
+token_minutes = 480         # 로그인 토큰 유효 시간(분) = 8시간
+collector_config = "parts/collector/collector.toml"   # 수집기 설정 (프로젝트 루트 기준 상대경로)
+
+# 시연 전용 계정. 실제 환경에서 사용 금지.
+# 비밀번호는 해시만 저장한다. 새 해시는 python -m backend.security 로 만든다.
+[[accounts]]
+username = "operator"       # 운영자: 조회, 시뮬레이터, 판정, 재학습 실행
+role = "operator"
+password_hash = "pbkdf2_sha256$600000$xDZ1vmv9kEEgz9i-G5TYRw$iFPLyTrIPZEc57F8EcsxnUp8kMUUdpmyLw1-kL1r78w"
+
+[[accounts]]
+username = "admin"          # 관리자: 운영자 권한 전부 + 승인/거절, 롤백
+role = "admin"
+password_hash = "pbkdf2_sha256$600000$ZvpMlSxbZSXunbN-E1Rs8Q$LMunC1mnslK6ks99uIhqyvSHjLagKGbv9SRDvnbjQEM"

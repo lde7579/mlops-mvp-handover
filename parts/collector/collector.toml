@@ -1,0 +1,11 @@
+# 수집기(parts/collector) 설정. 읽기 전용이며 표준 라이브러리 tomllib 으로 읽는다.
+defect_rate = 0.2   # 불량(볼트 미체결) 비율. next_sample()에 label 을 주지 않았을 때 쓴다
+image_size = 128    # 계약(docs/data-contract.md 1장) 고정값. 다른 값이면 오류
+part_count = 6      # 볼트 개수 (2행x3열 고정 위치). 다른 값이면 오류
+seed = 42           # 난수 시드. 같은 시드면 같은 결과
+data_dir = "data"   # 이미지 저장 폴더 (프로젝트 루트 기준 상대경로)
+
+[drift_strength]    # 드리프트 강도 (0~1)
+dark = 0.18         # 어두워짐
+noise = 0.24        # 노이즈 증가
+shift = 0.11        # 위치 이동

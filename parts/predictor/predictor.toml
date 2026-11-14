@@ -1,0 +1,7 @@
+# 추론·학습(parts/predictor) 설정. 읽기 전용이며 표준 라이브러리 tomllib 으로 읽는다.
+threshold = 0.5         # NG 판정 임계값 (score >= threshold 이면 NG). 새로 학습하는 모델에 기록할 기본값
+epochs = 5              # 학습 반복 횟수
+batch_size = 64         # 한 번에 학습하는 이미지 수
+learning_rate = 0.001   # 학습률
+seed = 42               # 난수 시드. 같은 시드, 같은 데이터면 같은 모델
+models_dir = "models"   # 모델 저장 폴더 (프로젝트 루트 기준 상대경로)
